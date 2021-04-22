@@ -7,13 +7,19 @@
       
     </v-navigation-drawer>
             -->
+    <!--
     <v-app-bar app>
       <v-banner>Unit Test Chellenge</v-banner>
     </v-app-bar>
+    -->
 
     <!-- Sizes your content based upon application components -->
     <v-main>
-      <!-- Provides the application the proper gutter -->
+      <v-col>
+        <!-- Provides the application the proper gutter -->
+        <Form
+      /></v-col>
+      <v-col> </v-col>
       <v-container fluid>
         <!-- If using vue-router -->
         <router-view></router-view>
@@ -27,10 +33,13 @@
 </template>
 
 <script>
+import Form from "../src/components/Form";
 export default {
   name: "App",
 
-  components: {},
+  components: {
+    Form,
+  },
 
   data: () => ({
     //
