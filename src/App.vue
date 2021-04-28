@@ -20,12 +20,12 @@
       <!-- Sizes your content based upon application components -->
       <v-main>
         <v-row>
-          <v-col>
+          <v-col cols="12" md="3">
             <v-container>
               <v-form v-model="valid">
                 <v-container>
                   <v-row>
-                    <v-col cols="12" md="4">
+                    <v-col>
                       <v-text-field
                         v-model="clientes.Nombre"
                         label="Nombre"
@@ -66,8 +66,12 @@
                         <v-btn color="primary" v-on:click="handleSave"
                           >Guardar</v-btn
                         >
-                        <v-btn color="primary">Nuevo</v-btn>
-                        <v-btn color="primary">Eliminar</v-btn>
+                        <v-btn color="primary" v-on:click="handleNew"
+                          >Nuevo</v-btn
+                        >
+                        <v-btn color="primary" v-on:click="handleDelete"
+                          >Eliminar</v-btn
+                        >
                       </v-container>
                     </v-col>
                   </v-row>
@@ -75,7 +79,7 @@
               </v-form>
             </v-container>
           </v-col>
-          <v-col>
+          <v-col cols="14" md="8">
             <v-container>
               <v-data-table
                 :headers="headers"
@@ -99,11 +103,13 @@
 export default {
   name: "App",
   methods: {
-    handleSave() {
+    handleSave() {},
+    handleNew() {
       var index = 0;
       console.log(this.clientes[index].Nombre);
-      index = index + 1;
-      this.clientes[index] = this.clientes.Nombre;
+    },
+    handleDelete() {
+      var index = 0;
       console.log(this.clientes[index].Nombre);
     },
   },
